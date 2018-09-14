@@ -1,4 +1,4 @@
-# Ack
+# Ack Tutorial
 
 ```sh
 ack 'pattern'
