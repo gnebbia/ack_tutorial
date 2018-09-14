@@ -1,5 +1,10 @@
 # Ack Tutorial
 
+This tutorial collects typical usage scenarios of ack, notice that ack is
+developed in Perl, and a faster although not so flexible version written in C is
+'ag', if something faster is needed, just check it out.
+
+
 ```sh
 ack 'pattern'
 # searches for that pattern in all files starting from current directory and all
