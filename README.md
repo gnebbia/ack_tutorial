@@ -1,53 +1,53 @@
 # Ack
 
 ```sh
-ack pattern
+ack 'pattern'
 # searches for that pattern in all files starting from current directory and all
 # its subdirectories except .svn and .git
 ```
 
 ```sh
-ack pattern path/to/dir
+ack 'pattern' path/to/dir
 # searches for that pattern in all files starting from specified  directory and all
 # its subdirectories except .svn and .git by default
 ```
 
 ```sh
-ack pattern -w 
+ack 'pattern' -w 
 # uses word boundaries, in order to not match pattern within another string
 ```
 
 ```sh
-ack pattern --ignore-dir env/ --ignore-dir dataset/
+ack 'pattern' --ignore-dir env/ --ignore-dir dataset/
 # searches for pattern but ignores everything inside the specified directories
 ```
 
 ```sh
-ack pattern --ignore-file=ext:pod,t,py,csv,tsc
+ack 'pattern' --ignore-file=ext:pod,t,py,csv,tsc
 # searches for pattern but ignores all the files who have the specified
 # extensions
 ```
 
 ```sh
-ack pattern --ignore-file=match:/^#.+#$/
+ack 'pattern' --ignore-file=match:/^#.+#$/
 # searches for pattern but ignores all the files who match the specified regular
 # expression
 ```
 
 ```sh
-ack pattern -l 
+ack 'pattern' -l 
 # only prints the file names containing the pattern
 ```
 
 
 ```sh
-ack pattern -L 
+ack 'pattern' -L 
 # only prints the file names NOT containing the pattern
 ```
 
 
 ```sh
-ack pattern -g 
+ack 'pattern' -g 
 # only prints file names matching either base name or absolute path 
 # with pattern
 ```
@@ -214,6 +214,33 @@ with the `--output` option we have special expansion strings which are:
 * `$1, $2, ... ` The contents of the 1st, 2nd ... bracketed groups in PATTERN
 * `$\`` The string before the match
 * `$'` The string after the match
+
+
+
+## Using ack like grep
+
+We generally can substitute grep with ack in many cases, let's see some
+examples:
+
+```sh
+ack 'type \w+' README.md -oh
+# outputs only the text matching the specified pattern, this is very
+# useful especially when we want to extract text or remove text from a file
+# or more files
+```
+
+```sh
+ack 'classifier \w+' ML_NOTES -c
+# counts the occurrences of the specified pattern
+```
+
+```sh
+ack 'classifier \w+' ML_NOTES -i
+# performs a case-insensitive search of the pattern
+```
+
+Notice that the position of the flags is not important, we can also put those
+just after 'ack'.
 
 
 ## Define a new Type
