@@ -1,5 +1,9 @@
 # Ack Tutorial
 
+Ack is a very flexible utility which can be used to perform searches inside
+source code, plenty of programmers are tempted of using grep for doing this, but
+as we will see, ack provides a much more flexible alternative to the classical grep in coding
+scenarios.
 This tutorial collects typical usage scenarios of ack, notice that ack is
 developed in Perl, and a faster although not so flexible version written in C is
 'ag', if something faster is needed, just check it out.
