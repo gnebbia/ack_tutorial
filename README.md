@@ -63,7 +63,7 @@ ack 'pattern' -g
 
 ```sh
 ack -g log --ruby
-# prints all the file which have in their path/name the specified pattern
+# prints all the files which have in their path/name the specified pattern
 # and or of type ruby
 ```
 
